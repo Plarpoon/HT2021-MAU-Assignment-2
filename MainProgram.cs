@@ -6,15 +6,11 @@ internal static class Program
     {
         Console.Title = "Selection and iteration in C#";
         _ = new SelectionAndIteration();
-
-        Console.WriteLine("Press any key to continue!");
+        Console.WriteLine("Press enter to continue!");
         Console.ReadLine();
+        Console.Clear();
 
         Console.Title = "Fahrenheit and Celsius converter";
-        //TemperatureConverter converter = new TemperatureConverter();
-
-        Console.WriteLine("Press any key to exit");
-        Console.ReadLine();
-        Environment.Exit(1);
+        _ = new TemperatureConverter();
     }
 }

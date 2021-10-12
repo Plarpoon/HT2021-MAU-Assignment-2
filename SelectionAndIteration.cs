@@ -2,7 +2,7 @@
 
 public class SelectionAndIteration
 {
-    public SelectionAndIteration()
+    internal SelectionAndIteration()
     {
         Console.WriteLine("My name is Alex, I am a student of the 'Fall 21' semester!\n");
 
@@ -57,7 +57,7 @@ public class SelectionAndIteration
 
         if (smallerNumber < biggerNumber) goto Finish;  // Although shunned by many there are some exception in which the 'goto' statement does improve readability
         {                                               // like this example documented on Microsoft's Docs https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/goto.
-            (smallerNumber, biggerNumber) = (biggerNumber, smallerNumber);  //  Swap of number via deconstruction.
+            (smallerNumber, biggerNumber) = (biggerNumber, smallerNumber);  //  Swap of numbers via deconstruction.
         }
 
         Finish:
@@ -149,7 +149,5 @@ public class SelectionAndIteration
         } while (continueLoop);
 
         Console.WriteLine("You pressed Enter without providing a text. See you again!\n\n");
-        Console.ReadLine();
-        Console.Clear();
     }
 }
