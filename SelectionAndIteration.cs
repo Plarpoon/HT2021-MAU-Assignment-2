@@ -4,7 +4,7 @@ public class SelectionAndIteration
 {
     public SelectionAndIteration()
     {
-        Console.WriteLine("My name is: Alex, I am a student of the 'winter 21' semester!\n");
+        Console.WriteLine("My name is: Alex, I am a student of the 'Fall 21' semester!\n");
 
         ShowStringLenght();
         Console.WriteLine();
@@ -17,7 +17,53 @@ public class SelectionAndIteration
 
     private static void SumNumbers()
     {
-        throw new NotImplementedException();
+        //  Although I made big use of the 'convert' method in the previous assignment
+        //  I opted to use a parsing method from now on instead as it does remove a lot of overhead.
+        //  For that very same reason I'm streamlining the process.
+
+        var smallerNumber = 0;
+        var biggerNumber = 0;
+        int input;
+
+        Console.WriteLine("Please enter a valid starting natural number");
+        var continueLoop = true;
+        do
+        {
+            if (!int.TryParse(Console.ReadLine(), out input))
+            {
+                Console.WriteLine("This is not a valid natural number! Please try again.");
+            }
+            else
+            {
+                smallerNumber = input;
+                continueLoop = false;
+            }
+        } while (continueLoop);
+
+        do
+        {
+            Console.WriteLine("Please enter another valid natural number");
+            if (!int.TryParse(Console.ReadLine(), out input))
+            {
+                Console.WriteLine("This is not a valid natural number! Please try again.");
+            }
+            else
+            {
+                biggerNumber = input;
+                continueLoop = false;
+            }
+        } while (continueLoop);
+
+        if (smallerNumber < biggerNumber) return;
+        {
+            (smallerNumber, biggerNumber) = (biggerNumber, smallerNumber);  //  Swap of number via deconstruction.
+        }
+
+        Console.WriteLine();
+        for (var i = smallerNumber; i <= biggerNumber; i++)
+        {
+            Console.Write("{0} ", i);
+        }
     }
 
     private static void MakeMyDay()
@@ -74,15 +120,19 @@ public class SelectionAndIteration
                     }
                 default:
                     {
-                        Console.WriteLine("You didn't input a valid day of the week\nPlease try again!"); break;
+                        Console.WriteLine("You didn't input a valid day of the week\nPlease try again!");
+                        break;
                     }
             }
-        } while (continueLoop); //  The loop is required exclusively for those that will input in the Read buffer anything but a valid day of the week.
-    }                           //  Essentially forcing them to comply if they don't want to remain stuck in the loop forever.
+        } while (continueLoop);                                                          //  The loop is required exclusively for those that will input in the Read buffer anything but a valid day of the week.
+        Console.WriteLine("Well done! Press enter to continue to the next session!");    //  Essentially forcing them to comply if they don't want to remain stuck in the loop forever.
+        Console.ReadLine();
+        Console.Clear();
+    }
 
     private static void ShowStringLenght()
     {
-        Console.WriteLine("Provide a text so that I can tell you how long it is and make it all capital!");
+        Console.WriteLine("Provide a text so that I can tell you how long it is and make it all capital!\nPress Enter without typing anything to skip this");
         var continueLoop = true;
         do
         {
