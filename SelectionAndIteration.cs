@@ -4,7 +4,7 @@ public class SelectionAndIteration
 {
     public SelectionAndIteration()
     {
-        Console.WriteLine("My name is: Alex, I am a student of the 'Fall 21' semester!\n");
+        Console.WriteLine("My name is Alex, I am a student of the 'Fall 21' semester!\n");
 
         ShowStringLenght();
         Console.WriteLine();
@@ -24,6 +24,7 @@ public class SelectionAndIteration
         var smallerNumber = 0;
         var biggerNumber = 0;
         int input;
+        double sumNumbers = 0;
 
         Console.WriteLine("Please enter a valid starting natural number");
         var continueLoop = true;
@@ -54,16 +55,19 @@ public class SelectionAndIteration
             }
         } while (continueLoop);
 
-        if (smallerNumber < biggerNumber) return;
-        {
+        if (smallerNumber < biggerNumber) goto Finish;  // Although shunned by many there are some exception in which the 'goto' statement does improve readability
+        {                                               // like this example documented on Microsoft's Docs https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/goto.
             (smallerNumber, biggerNumber) = (biggerNumber, smallerNumber);  //  Swap of number via deconstruction.
         }
 
+        Finish:
         Console.WriteLine();
         for (var i = smallerNumber; i <= biggerNumber; i++)
         {
-            Console.Write("{0} ", i);
+            sumNumbers = i + i;
         }
+
+        Console.WriteLine("The sum of the numbers between {0} and {1} is {2}", smallerNumber, biggerNumber, sumNumbers);
     }
 
     private static void MakeMyDay()
@@ -88,39 +92,39 @@ public class SelectionAndIteration
                         continueLoop = false;
                         break;
                     }
-                case "3":
+                case "3":   // Tuesday and Wednesday were on the same 'case' but we had to number the scenarios from 1 to 7, so I duplicated them.
                     {
-                        Console.WriteLine("Thursday, uuush, still one day to Friday!");
+                        Console.WriteLine("Tuesday and Wednesday break your heart!");
                         continueLoop = false;
                         break;
                     }
                 case "4":
                     {
-                        Console.WriteLine("It's Friday! You are in love!");
+                        Console.WriteLine("Thursday, uuush, still one day to Friday!");
                         continueLoop = false;
                         break;
                     }
                 case "5":
                     {
-                        Console.WriteLine("Saturday, do nothing and do plenty of it!");
+                        Console.WriteLine("It's Friday! You are in love!");
                         continueLoop = false;
                         break;
                     }
                 case "6":
                     {
-                        Console.WriteLine("And Sunday always comes too soon!");
+                        Console.WriteLine("Saturday, do nothing and do plenty of it!");
                         continueLoop = false;
                         break;
                     }
                 case "7":
                     {
-                        Console.WriteLine("Not in a good mood? This is not a valid date!");
+                        Console.WriteLine("And Sunday always comes too soon!");
                         continueLoop = false;
                         break;
                     }
                 default:
                     {
-                        Console.WriteLine("You didn't input a valid day of the week\nPlease try again!");
+                        Console.WriteLine("Not in a good mood? This is not a valid date!\nPlease try again!");
                         break;
                     }
             }
