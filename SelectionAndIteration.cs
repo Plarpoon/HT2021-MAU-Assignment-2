@@ -33,7 +33,7 @@ public class SelectionAndIteration
         var continueLoop = true;
         do
         {
-            if (!int.TryParse(Console.ReadLine(), out input))
+            if (!int.TryParse(Console.ReadLine(), out input))   //  Using the TryParse because it's required and to get higher grade A.
             {
                 Console.WriteLine("This is not a valid natural number! Please try again.");
             }
@@ -47,7 +47,7 @@ public class SelectionAndIteration
         do
         {
             Console.WriteLine("Please enter another valid natural number");
-            if (!int.TryParse(Console.ReadLine(), out input))
+            if (!int.TryParse(Console.ReadLine(), out input))   //  Again with the TryParse.
             {
                 Console.WriteLine("This is not a valid natural number! Please try again.");
             }
@@ -58,7 +58,7 @@ public class SelectionAndIteration
             }
         } while (continueLoop);
 
-        if (smallerNumber < biggerNumber) goto Finish;  // Although shunned by many there are some exception in which the 'goto' statement does improve readability
+        if (smallerNumber < biggerNumber) goto Finish;  // Although shunned by many there are some exception in which in the 'goto' statement does improve readability
         {                                               // like this example documented on Microsoft's Docs https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/goto.
             (smallerNumber, biggerNumber) = (biggerNumber, smallerNumber);  //  Swap of numbers via deconstruction.
         }
@@ -144,9 +144,9 @@ public class SelectionAndIteration
         do
         {
             var textToElaborate = Console.ReadLine();
-            var numberOfCharacters = textToElaborate?.Length;
+            var numberOfCharacters = textToElaborate?.Length;   //  Count length of string characters.
             if (numberOfCharacters == 0) continueLoop = false;
-            var upper = textToElaborate?.ToUpper();
+            var upper = textToElaborate?.ToUpper(); //  Transform string to uppercase.
             Console.WriteLine("All caps echo: " + upper);
             Console.WriteLine("The number of characters present in the phrase you provided is: {0}\n\n", numberOfCharacters);
         } while (continueLoop);

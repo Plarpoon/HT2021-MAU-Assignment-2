@@ -7,9 +7,9 @@ namespace _2A;
 
 public class TemperatureConverter
 {
-    internal TemperatureConverter()
+    internal TemperatureConverter() //  constructor.
     {
-        Console.OutputEncoding = Encoding.UTF8;
+        Console.OutputEncoding = Encoding.UTF8;     // encoding is specified to avoid having issues with the symbol °.
         MenuBuilder();
         MenuSelector();
     }
@@ -65,7 +65,7 @@ public class TemperatureConverter
         for (var i = 0; i <= max; i++)   // I could change i++ with i+4 or i+5 for the alternatives asked by the assignment but I like it more with +1
         {
             var fahrenheit = (i * 1.8) + 32;
-            fahrenheit = Math.Round(fahrenheit, 1);
+            fahrenheit = Math.Round(fahrenheit, 1); //  round to only one digit after the comma (it's more organized that way).
             Console.WriteLine("{0}°C = {1}°F", i, fahrenheit);
         }
 

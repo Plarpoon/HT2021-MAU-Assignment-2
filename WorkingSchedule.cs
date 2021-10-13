@@ -10,16 +10,16 @@ namespace _2A;
 internal class WorkingSchedule
 {
     private static string[]? _arrayOfWeeks;
-    private const int NumberOfMaxWeeks = 52;
+    private const int NumberOfMaxWeeks = 52;    //  Change this to adjust the number of weeks to calculate.
     private static int _startingWeek;
     private static int _frequency;
 
     internal WorkingSchedule()
     {
-        MenuBuilder();
-        MenuSelector();
-        PopulateArray();
-        Schedule();
+        MenuBuilder();      //  visualize the menu.
+        MenuSelector();     //  add selectors.
+        PopulateArray();    //  load string array.
+        Schedule();         //  do the magic required by the assignment.
     }
 
     private static void PopulateArray()
@@ -40,21 +40,21 @@ internal class WorkingSchedule
             var input = Console.ReadLine();
             switch (input)
             {
-                case "1":   // Weekends to work
+                case "1":   // Weekends to work.
                     {
                         _startingWeek = 2;
                         _frequency = 3;
                         continueLoop = false;
                         break;
                     }
-                case "2":   // Nights to work
+                case "2":   // Nights to work.
                     {
                         _startingWeek = 1;
                         _frequency = 4;
                         continueLoop = false;
                         break;
                     }
-                case "0":
+                case "0":   //  Exit.
                     {
                         continueLoop = false;
                         break;
@@ -75,14 +75,14 @@ internal class WorkingSchedule
 
         var nextJob = _frequency;
 
-        var index = 1;
+        var index = 1;  //  Init an index for the foreach.
         foreach (var week in _arrayOfWeeks)
         {
-            if (index == _startingWeek)
+            if (index == _startingWeek) //  print the starting event.
             {
                 Console.WriteLine(week);
             }
-            if (index == nextJob + _startingWeek) //  +1 required as the cycle is not over yet and the addition is done only at the end.
+            if (index == nextJob + _startingWeek)   //  print every next event.
             {
                 Console.WriteLine(week);
                 nextJob += _frequency;
@@ -94,7 +94,7 @@ internal class WorkingSchedule
         Console.ReadLine();
 
         Console.Clear();
-        _ = new WorkingSchedule();
+        _ = new WorkingSchedule();  //  re-initialize program.
     }
 
     private static void MenuBuilder()
