@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿//  This project is made for .NET 6 which is the default version on Windows 11
+//  Thus using the new program style linked below
+//  https://docs.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates
+using System.Text;
 
 namespace _2A;
 
@@ -44,7 +47,6 @@ public class TemperatureConverter
                 case "0":
                     {
                         continueLoop = false;
-                        Environment.Exit(1);
                         break;
                     }
                 default:

@@ -1,4 +1,7 @@
-﻿namespace _2A;
+﻿//  This project is made for .NET 6 which is the default version on Windows 11
+//  Thus using the new program style linked below
+//  https://docs.microsoft.com/en-us/dotnet/core/tutorials/top-level-templates
+namespace _2A;
 
 public class SelectionAndIteration
 {
@@ -6,7 +9,7 @@ public class SelectionAndIteration
     {
         Console.WriteLine("My name is Alex, I am a student of the 'Fall 21' semester!\n");
 
-        ShowStringLenght();
+        ShowStringLength();
         Console.WriteLine();
 
         MakeMyDay();
@@ -134,9 +137,9 @@ public class SelectionAndIteration
         Console.Clear();
     }
 
-    private static void ShowStringLenght()
+    private static void ShowStringLength()
     {
-        Console.WriteLine("Provide a text so that I can tell you how long it is and make it all capital!\nPress Enter without typing anything to skip this");
+        Console.WriteLine("Provide a text so that I can tell you how long it is and make it all capital!\nPress Enter without typing anything to exit this loop");
         var continueLoop = true;
         do
         {
